@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STUDIO RENTALS </title>
+
+    <!-- CSS and Font Awesome links -->
+	<link rel="stylesheet" type="text/css" href="contstyle.css">
+    <link rel="stylesheet" type="text/css" href="allstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Login form CSS -->
+    <link rel="stylesheet" href="LoginStyle.css">
+
+    <!-- JavaScript for video looping and login form toggle -->
+  
+	<script>
+document.getElementById('menu-icon').addEventListener('click', function() {
+    const navlist = document.querySelector('.navlist');
+    navlist.classList.toggle('active'); // Toggle the active class
+});
+		function toggleMenu() {
+    const navlist = document.getElementById('navlist');
+    navlist.classList.toggle('active');
+}
+</script>
+	
+</head>
+
+<header>
+
+        <a href="index.html">
+  <img src="logo.png" alt="Description of the image" class="logo">
+			</a>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="studfinal.html">Studio</a></li>	
+					<li><a href="contsfinal.html">Contacts</a></li>
+					<li><a href="abtfinal.html">About Us</a></li>
+					
+                <div class="login-container">
+                    <input type="checkbox" id="show" class="show-checkbox">
+                    <label for="show" class="show">Login</label>
+                    <div class="wrapper">
+                        <label class="close-btn" for="show"><i class="fas fa-times"></i></label>
+                        <form action="login.php" method="POST">
+                            <h1>Login</h1>
+                            <div class="input-box">
+                                <input type="text" name="username" placeholder="Username" required>
+                                <i class="bx bxs-user-circle"></i>
+                            </div>
+                            <div class="input-box">
+                                <input type="password" name="password" placeholder="Password" required>
+                                <i class="bx bxs-lock-alt"></i>
+                            </div>
+                            <div class="remember-forgot">
+                                <label>
+                                    <input type="checkbox" id="remember"> Remember me
+                                </label>
+                                <a href="#">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn">Login</button>
+                            <div class="register-link">
+                                <p>Don't have an account? <a href="Registration/Registration.php">Register</a></p> 
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </ul>
+    </header>
+    <body>
+			<div class="form-card1">
+  <div class="form-card2">
+    <form class="form">
+      <p class="form-heading">Get In Touch</p>
+
+      <div class="form-field">
+        <input required="" placeholder="Name" class="input-field" type="text" />
+      </div>
+
+      <div class="form-field">
+        <input
+          required=""
+          placeholder="Email"
+          class="input-field"
+          type="email"
+        />
+      </div>
+
+      <div class="form-field">
+        <input
+          required=""
+          placeholder="Subject"
+          class="input-field"
+          type="text"
+        />
+      </div>
+
+      <div class="form-field">
+        <textarea
+          required=""
+          placeholder="Message"
+          cols="30"
+          rows="3"
+          class="input-field"
+        ></textarea>
+      </div>
+
+      <button class="sendMessage-btn">Send Message</button>
+    </form>
+
+	<div id="footer">
+        &copy; K2 Band Rehearsal Studio. All rights reserved.
+    </div>
+
+</body>
+</html>

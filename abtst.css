@@ -1,0 +1,141 @@
+
+.studio-section {
+color: #FFFFFC;
+background: rgba(0, 0, 0, 0.7);
+max-width: 800px;
+padding: 60px;
+border-radius: 2em;
+	transform: translateY(-65px) translateX(-40px);
+	margin-right: 50px;
+}
+
+#intro-section {
+	margin-left: 150px;
+    margin-top: 175px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#invite-section {
+	margin-left: 10px;
+    text-align: center;
+    margin-top: 175px;
+    animation: fadeInLeft 2s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#contact-section {
+	margin-right: 10px;
+    text-align: center;
+    margin-top: -30px;
+    animation: fadeInRight 2s ease-in-out;
+}
+
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        #social-media {
+					margin-right: 40px;
+            text-align: center;
+            margin-bottom: -350px;
+            animation: fadeInDown 2s ease-in-out;
+        }
+
+        #social-media {
+            margin-top: 20px;
+        }
+
+        #social-media a {
+            display: inline-block;
+            margin-right: 2px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #social-media a:hover {
+            transform: scale(1.2);
+        }
+
+        #social-media img {
+            width: 30px;
+        }
+
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #gallery {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 400px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 20%;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+iframe{  
+					margin-left: 10px;
+					margin-top: 50px; 
+					transform: translateX(-40px);
+					border-radius: 2em;
+					border: none;
+					transition: 0.3 ease-in-out;
+					
+	
+}

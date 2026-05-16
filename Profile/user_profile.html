@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For icons -->
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-pic">
+                <img src="profile-placeholder.jpg" alt="Profile Picture" id="profileImage">
+            </div>
+            <h2 id="username">User Name</h2>
+            <p id="role">User Role</p>
+        </div>
+
+        <div class="profile-content">
+            <div class="profile-info">
+                <h3>Profile Information</h3>
+                <p><strong>First Name: </strong> <span id="firstName">John</span></p>
+                <p><strong>Last Name: </strong> <span id="lastName">Doe</span></p>
+                <p><strong>Email: </strong> <span id="email">johndoe@example.com</span></p>
+                
+                <!-- Password Section -->
+                <p><strong>Password: </strong> 
+                    <span id="password" class="hidden-password">********</span>
+                    <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordVisibility()"></i>
+                </p>
+            </div>
+
+            <div class="profile-settings">
+                <h3>Account Settings</h3>
+                <button class="btn" onclick="editProfile()">Edit Profile</button>
+                <button class="btn" onclick="changePassword()">Change Password</button>
+                <button class="btn" onclick="logout()">Log Out</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>

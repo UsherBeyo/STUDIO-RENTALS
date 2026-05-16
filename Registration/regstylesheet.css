@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    box-shadow: 0px 0px 15px 1px #625f63;
+    opacity: 100%;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: black;
+}
+
+/* Body background color */
+body {
+    background: linear-gradient(180deg, #000000, #111111);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+ /* Logo styles */
+.logo {
+    font-size: 30px;
+    font-weight: 1000;
+    color: white;
+	margin-right: 20px;
+}
+
+/* Navigation list styles */
+.navlist {
+    display: contents;
+	align-items: center; /* Vertically center the navigation items */
+    list-style: none;
+    padding: 0;
+    background-color: black;
+}
+
+.navlist li {
+    margin-left: 30px; /* Adjust the spacing between navigation items */
+}
+
+/* Navigation link styles */
+.navlist a {
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.55s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+}
+
+/*LOG IN FORM CSS */
+.login-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push to the right of the header */
+}
+.show-checkbox {
+    display: none;
+}
+
+.show-checkbox:checked ~ .overlay {
+    display: block;
+}
+
+.show-checkbox:checked ~ .wrapper {
+    display: block;
+}
+
+h1 {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    outline: 100px;
+    outline-color:white;
+}
+
+h1.create {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    outline: 100px;
+    outline-color:white;
+}
+
+.regform {
+    position: absolute;
+    margin-top: 5%;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 60%; /* Adjust the maximum width as needed */
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    opacity: 0.5;
+    transition-duration: 0.4s;
+}
+
+.regform:hover {
+    box-shadow: 1px 1px 15px 7px #625f63;
+    opacity: 100%;
+}
+
+input {
+    margin: auto;
+    height: 45px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+input:hover {
+    background-color: #ffffff;
+    box-shadow: 0 12px 16px 0 rgb(56, 55, 55);
+}
+
+.align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    margin-top: 5%;
+}
+
+button {
+    background-color: black;
+    margin-top: 5%;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 16px;
+    transition-duration: 0.4s;
+    color: white;
+}
+
+p {
+    text-align: center;
+}
+
+button:hover {
+    background-color: white;
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: black;
+    cursor: pointer;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .logo {
+    font-size: 30px;
+    font-weight: 1000;
+    color: white;
+	margin-left: 1px;
+	margin-right: 1px;
+	width: 80px; /* specify the width you want */
+    height: 80px; 
+}

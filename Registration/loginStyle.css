@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "sans-serif";
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Move form to the right */
+    align-items: center;
+}
+
+.wrapper {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: black;
+	opacity: 95%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    z-index: 2; /* Ensure it's above other content */
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    color: #fff; 
+    font-family: "Poppins", "sans-serif"; 
+	padding: 5px 4px 1px 10px
+	
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: px;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -1px 0 15px;
+}
+
+.remember-forgot label input {
+    color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.wrapper .close-btn:hover{
+	color:#000;
+}
+
+.login-link {
+    margin-left: 20px; /* Adjust the margin as needed */
+}	
+.show-btn {
+    /* Set the background color to white */
+    color: white; 
+    padding: 10px 9px;
+    font-size: 16px;
+    font-weight:580;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center; /* Center-align the text */
+    display: inline-block; /* Make it inline-block to control its width */
+    margin: 20px ; 
+	line-height: 10px;
+	margin-left:325px;/* Adjust margin to control positioning */
+}
+.show-btn i {
+    position: relative;
+    top: 1px; /* Adjust the top value to move the icon up or down */
+}
+
+#show:checked ~ .wrapper {
+    display: block;
+}
+
+.show-checkbox {
+    display: none;
+}
+
+.show-checkbox:checked + .wrapper {
+    display: block;
+}
+

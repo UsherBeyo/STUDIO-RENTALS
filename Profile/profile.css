@@ -1,0 +1,203 @@
+/* Profile Container */
+.profile-container {
+    width: 60%;
+    margin: 50px auto;
+    margin-top: 10%;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Section */
+.profile-header {
+    padding: 15px;
+    text-align: center;
+    background: #A9A29C;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+}
+
+h2 {
+    margin: 15px 0 5px;
+    font-size: 28px;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+/* Toggle Password Icon */
+#togglePassword {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #4A90E2;
+}
+
+.hidden-password {
+    letter-spacing: 3px;
+}
+
+/* Profile Content */
+.profile-content {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Profile Info Section */
+.profile-info h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4A90E2;
+    padding-bottom: 10px;
+    color: white;
+    margin-left: 20px;
+}
+
+.profile-info p {
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+    margin-left: 20px;
+}
+
+/* Profile Settings */
+.profile-settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-settings h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #030303;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 15px 0;
+    margin-left: 15px;
+    background-color: #030303;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.btn:hover {
+    background-color: #030303;
+}
+
+    .popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; width: 50%; max-width: 600px; border: 1px solid #ccc; border-radius: 8px; z-index: 1000; }
+    .popup.active { display: block; }
+    .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; }
+    .overlay.active { display: block; }
+    .btn { margin-top: 10px; padding: 10px 15px; border: none; background-color: #4CAF50; color: white; cursor: pointer; border-radius: 5px; }
+    .btn:hover { background-color: #45a049; }
+
+/* Overlay Background */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    color: white;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Popup Form */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 8px;
+}
+
+.popup.active {
+    display: block;
+}
+
+.popup h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.popup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popup input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup .btn:hover {
+    background-color: #218838;
+}
+
+.popup .cancel-btn {
+    background-color: #dc3545;
+    margin-top: 10px;
+}
+
+.popup .cancel-btn:hover {
+    background-color: #c82333;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

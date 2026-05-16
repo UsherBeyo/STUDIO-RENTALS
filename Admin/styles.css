@@ -1,0 +1,334 @@
+/* Reset some basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure space for logout at the bottom */
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #1a252f;
+    text-align: center;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: #34495e;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Icons for each menu item using CSS */
+.dashboard-icon {
+    background-color: #1abc9c;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZWNmMGYxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTEgMTRoMjd2LTdoLTd6Ii8+PHBhdGggZD0iTTIgMiA3IDEyaDIwVjEyaC0yMHoiLz48L3N2Zz4=');
+}
+
+.studios-icon {
+    background-color: #3498db;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTIgMmgxNnYxNkgyVjJ6Ii8+PC9zdmc+');
+}
+
+.schedules-icon {
+    background-color: #f1c40f;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTIgNkgxMnYxMkgyVjZ6Ii8+PC9zdmc+');
+}
+
+.waiting-icon {
+    background-color: #e67e22;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTIgMkgxNnYxNkgyVjJ6Ii8+PC9zdmc+');
+}
+
+.history-icon {
+    background-color: #9b59b6;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTIgMkgxNnYxNkgyVjJ6Ii8+PC9zdmc+');
+}
+
+/* Active Menu Item Styling */
+.menu-item.active-menu {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+
+.menu-item.active-menu .menu-icon {
+    opacity: 0.8;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 220px; /* Width of the sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s;
+    min-height: 100vh;
+    background-color: #ecf0f1;
+}
+
+.content-section {
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.content-section.active {
+    display: block; /* Show active section */
+    opacity: 1;
+}
+
+.content-section.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Focus Styles for Accessibility */
+.menu-item:focus {
+    outline: none;
+    background-color: #34495e;
+}
+
+/* Existing styles remain unchanged */
+
+/* Top bar styling */
+.top-bar {
+    width: calc(100% - 220px);
+    height: 50px;
+    background-color: #34495e;
+    position: fixed;
+    top: 0;
+    left: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.profile-button {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-button:hover {
+    background-color: #16a085;
+}
+
+.current-section-title {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Ensure main content starts below the top bar */
+.main-content {
+    margin-top: 50px;
+}
+
+/* Additional icon for user management */
+.user-management-icon {
+    background-color: #e74c3c;
+}
+
+/* Logout icon */
+.logout-section {
+    background-color: #e74c3c;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-top: 1px solid #34495e;
+    transition: background-color 0.2s;
+}
+
+.logout-section:hover {
+    background-color: #c0392b;
+}
+
+.logout-section .menu-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    background-color: #ffffff;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZGVmN2Y4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTEgMTJoM3YtM2gxMnYzdjNoLTEydjNoLTN2LTMtMyIvPjwvc3ZnPg==');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logout-icon {
+    background-color: #c0392b;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #34495e;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Button Styles for CRUD Operations */
+button.create-btn, button.edit-btn, button.delete-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button.create-btn {
+    background-color: #2ecc71;
+}
+
+button.edit-btn {
+    background-color: #3498db;
+}
+
+button.delete-btn {
+    background-color: #e74c3c;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Dashboard Grid to organize clickable blocks */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Individual blocks styling */
+.dashboard-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dashboard-block {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-block:hover {
+    background-color: #2980b9;
+}
+
+.dashboard-block .menu-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    background-size: 40px 40px; /* Adjust icon size */
+}
+
+.dashboard-block span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 16px;
+        display: none; /* Hide the header text on small screens */
+    }
+
+    .top-bar {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+
+    .menu-item span {
+        display: none; /* Hide menu labels on small screens */
+    }
+
+    .menu-item span, .logout-section span {
+        display: none;
+    }
+
+    .menu-icon {
+        margin-right: 0;
+    }
+
+    .main-content {
+        margin-left: 60px; /* Adjust margin when sidebar is collapsed */
+    }
+}

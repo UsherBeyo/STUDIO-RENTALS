@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STUDIO RENTALS </title>
+
+    <!-- CSS and Font Awesome links -->
+    <link rel="stylesheet" type="text/css" href="allstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Login form CSS -->
+    <link rel="stylesheet" href="LoginStyle.css">
+	 <link rel="stylesheet" href="abtst.css">
+
+    <!-- JavaScript for video looping and login form toggle -->
+  
+	<script>
+document.getElementById('menu-icon').addEventListener('click', function() {
+    const navlist = document.querySelector('.navlist');
+    navlist.classList.toggle('active'); // Toggle the active class
+});
+		function toggleMenu() {
+    const navlist = document.getElementById('navlist');
+    navlist.classList.toggle('active');
+}
+</script>
+	
+</head>
+
+<header>
+
+        <a href="index.html">
+  <img src="logo.png" alt="Description of the image" class="logo">
+			</a>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="studfinal.html">Studio</a></li>	
+					<li><a href="contsfinal.html">Contacts</a></li>
+					<li><a href="abtfinal.html">About Us</a></li>
+					
+                <div class="login-container">
+                    <input type="checkbox" id="show" class="show-checkbox">
+                    <label for="show" class="show">Login</label>
+                    <div class="wrapper">
+                        <label class="close-btn" for="show"><i class="fas fa-times"></i></label>
+                        <form action="login.php" method="POST">
+                            <h1>Login</h1>
+                            <div class="input-box">
+                                <input type="text" name="username" placeholder="Username" required>
+                                <i class="bx bxs-user-circle"></i>
+                            </div>
+                            <div class="input-box">
+                                <input type="password" name="password" placeholder="Password" required>
+                                <i class="bx bxs-lock-alt"></i>
+                            </div>
+                            <div class="remember-forgot">
+                                <label>
+                                    <input type="checkbox" id="remember"> Remember me
+                                </label>
+                                <a href="#">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn">Login</button>
+                            <div class="register-link">
+                                <p>Don't have an account? <a href="Registration/Registration.php">Register</a></p> 
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </ul>
+    </header>
+<body>
+    <div class="studio-section" id="intro-section">
+    <h2 style="text-align: center;">Welcome to K2 Band <br> Rehearsal  Studios</h2>
+<p style="text-align: center; font-size: 1.2em;">
+    K2 Band Rehearsal Studio is a leading music studio<br> that provides high-quality rehearsal spaces and <br>services for musicians and bands. Founded since 2010, <br>the studio offers instruments such as <br>amplifiers, guitars, drum sets, and microphones.<br> We also rent our instruments <br> for events, especially for schools.
+
+
+
+
+
+
+
+</p>
+</div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.3303328126576!2d121.18248450000002!3d14.580243499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c10020986bd7%3A0xe83717650d5ed709!2sInday%20Subdivision!5e0!3m2!1sen!2sph!4v1730027742318!5m2!1sen!2sph" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+
+    <div id="footer">
+        &copy; K2 Band Rehearsal Studio. All rights reserved.
+    </div>
+
+</body>
+</html>

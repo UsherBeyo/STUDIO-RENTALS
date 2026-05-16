@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<?php
+    session_start();
+?>
+<html>
+    <head>
+    <link rel="icon" href="../logo.png" type="image/x-icon"/>
+        <title>
+            Registration
+        </title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- CSS and Font Awesome links -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="regstylesheet.css">
+        <link rel="stylesheet" href="loginStyle.css">
+    </head>
+    
+    <body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <header>
+            <a href="../index.php">
+                <img src="../logo.png" alt="Description of the image" class="logo">
+            </a>
+            <ul class="navlist">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../studfinal.php">Studio</a></li>	
+                <li><a href="../contsfinal.php">Contacts</a></li>
+                <li><a href="../abtfinal.php">About Us</a></li>
+                <div class="login-container">
+                    <input type="checkbox" id="show" class="show-checkbox">
+                    <label for="show" class="show-btn">Login</label>
+                    <div class="wrapper">
+                        <label class="close-btn" for="show"><i class="fas fa-times"></i></label>
+                        <form action="../login.php" method="POST">
+                            <div class="input-box">
+                                <input type="text" name="username"placeholder="Username" required>
+                                <i class='bx bxs-user-circle'></i>
+                            </div>
+                            <div class="input-box">
+                                <input type="password" name="password"placeholder="Password" required>
+                                <i class='bx bxs-lock-alt'></i>
+                            </div>
+                            <div class="remember-forgot">
+                                <label>
+                                    <input type="checkbox" id="remember"> Remember me
+                                </label>
+                                <a href="#">Forgot password?</a>
+                            </div>
+                            <button type="submit" name="login-btn" class="btn">Login</button>
+                            <div class="register-link">
+                                <p>Don't have an account? <a href="Registration.php">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </ul>
+        </header>
+
+        <h1 class="create">Create an Account</h1>
+            
+        </div>
+        <form action="accounts.php" method="post">
+            <div class = "regform">
+                <?php
+                    if(isset($_SESSION['status']))
+                    {
+                        echo "<h4>".$_SESSION['status']."</h4>";
+                        unset($_SESSION['status']); // Unset after displaying
+                        echo "<hr>";
+                    }
+                ?>
+                <label for="Fname">
+                    <b>First Name</b><br>
+                </label>
+                <input type="text" placeholder="First Name" name="fname" id="fname" required>
+    
+                <label for="Lname">
+                    <b>Last Name</b><br>
+                </label>
+                <input type="text" placeholder="Last Name" name="lname" id="lname" required>
+    
+                <label for="username">
+                     <b>Username</b><br>
+                </label>
+                <input type="text" placeholder="Username" name="username" id="username" required>
+    
+                <label for="password">
+                    <b>Password</b><br>
+                </label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required>
+    
+                <label for="email">
+                    <b>Email</b>
+                </label>
+                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    
+                <hr>
+    
+                <div class = "align-center">
+                    <button type="submit" name="reg-button" class="register-button">
+                        Register
+                    </button>
+                </div> 
+            </div>
+        </form>
+    </body>
+</html>
+
+
+

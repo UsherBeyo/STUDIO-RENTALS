@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Interface</title>
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed Left Sidebar -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Admin Navigation Sidebar">
+        <div class="sidebar-header">
+            <h2>Admin Panel</h2>
+        </div>
+        <ul class="menu">
+            <li class="menu-item active-menu" data-section="Dashboard" role="button" tabindex="0" aria-label="Dashboard">
+                <div class="menu-icon dashboard-icon"></div>
+                <span>Dashboard</span>
+            </li>
+            <li class="menu-item" data-section="Studios" role="button" tabindex="0" aria-label="Studios">
+                <div class="menu-icon studios-icon"></div>
+                <span>Studios</span>
+            </li>
+            <li class="menu-item" data-section="Schedules" role="button" tabindex="0" aria-label="Schedules">
+                <div class="menu-icon schedules-icon"></div>
+                <span>Schedules</span>
+            </li>
+            <li class="menu-item" data-section="Waiting" role="button" tabindex="0" aria-label="Waiting">
+                <div class="menu-icon waiting-icon"></div>
+                <span>Waiting</span>
+            </li>
+            <li class="menu-item" data-section="History" role="button" tabindex="0" aria-label="History">
+                <div class="menu-icon history-icon"></div>
+                <span>History</span>
+            </li>
+            
+            <!-- User Management Section -->
+            <li class="menu-item" data-section="CRUD" role="button" tabindex="0" aria-label="CRUD">
+                <div class="menu-icon user-management-icon"></div>
+                <span>CRUD</span>
+            </li>
+        </ul>
+
+        <!-- Static Logout Section at the Bottom -->
+        <a href="../index.html">
+            <div class="logout-section" role="button" tabindex="0" aria-label="Logout">
+                <div class="menu-icon logout-icon"></div>
+                <span>Logout</span>
+            </div>
+        </a>
+    </aside>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span class="current-section-title" id="section-title">Dashboard</span>
+        <button class="profile-button" onclick="location.href='admin-profile-setup.html'">Profile Setup</button>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="main-content">
+        <!-- Dashboard Section with clickable menu squares -->
+        <section id="Dashboard" class="content-section active">
+            <h1>Dashboard</h1>
+            <div class="dashboard-grid">
+                <div class="dashboard-block" data-section="Dashboard">
+                    <div class="menu-icon dashboard-icon"></div>
+                    <span>Dashboard</span>
+                </div>
+                <div class="dashboard-block" data-section="Studios">
+                    <div class="menu-icon studios-icon"></div>
+                    <span>Studios</span>
+                </div>
+                <div class="dashboard-block" data-section="Schedules">
+                    <div class="menu-icon schedules-icon"></div>
+                    <span>Schedules</span>
+                </div>
+                <div class="dashboard-block" data-section="Waiting">
+                    <div class="menu-icon waiting-icon"></div>
+                    <span>Waiting</span>
+                </div>
+                <div class="dashboard-block" data-section="History">
+                    <div class="menu-icon history-icon"></div>
+                    <span>History</span>
+                </div>
+                <div class="dashboard-block" data-section="CRUD">
+                    <div class="menu-icon user-management-icon"></div>
+                    <span>CRUD</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Studios Section -->
+        <section id="Studios" class="content-section hidden">
+            <h1>Studios</h1>
+            <p>Manage studio details such as pictures, ratings, descriptions, etc.</p>
+        </section>
+
+        <!-- Schedules Section -->
+        <section id="Schedules" class="content-section hidden">
+            <h1>Schedules</h1>
+            <p>View and manage studio schedules.</p>
+        </section>
+
+        <!-- Waiting Section -->
+        <section id="Waiting" class="content-section hidden">
+            <h1>Waiting</h1>
+            <p>Manage waiting reservations.</p>
+        </section>
+
+        <!-- History Section -->
+        <section id="History" class="content-section hidden">
+            <h1>History</h1>
+            <p>View the history of all reservations and actions.</p>
+        </section>
+
+        <!-- CRUD Section -->
+        <section id="CRUD" class="content-section hidden">
+            <h1>User Management (CRUD)</h1>
+
+            <!-- Add PHP to Display Data Dynamically -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Token Key</th>
+                        <th>Verified</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    // Database connection configuration
+                    $host = 'localhost';  // Database host
+                    $db = 'studio_rentals';  // Database name
+                    $user = 'root';  // Database username
+                    $pass = '';  // Database password
+
+                    // Create a connection
+                    $conn = new mysqli($host, $user, $pass, $db);
+
+                    // Check the connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+
+                    // Query the database for users
+                    $sql = "SELECT id, username, password, first_name, last_name, email, token_key, verified, role FROM users";
+                    $result = $conn->query($sql);
+
+                    // Display the data in the table
+                    if ($result->num_rows > 0) {
+                        // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['password']) . "</td>";  // Be careful with displaying passwords
+                            echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['token_key']) . "</td>";
+                            echo "<td>" . ($row['verified'] ? 'Yes' : 'No') . "</td>";
+                            echo "<td>" . htmlspecialchars($row['role']) . "</td>";
+                            // Edit and Delete buttons
+                            echo "<td>
+                            <a href='edit.php?id=" . $row['id'] . "'><button class='edit-btn'>Edit</button></a> 
+                            <a href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Are you sure you want to delete this user?\");'><button class='delete-btn'>Delete</button></a>
+                            </td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='10'>No users found</td></tr>";
+                    }
+
+                    // Close the connection
+                    $conn->close();
+                    ?>
+                </tbody>
+            </table>
+            <a href="create.php"><button class="create-btn">Create New User</button></a>
+        </section>
+    </main>
+
+    <!-- Link to Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
